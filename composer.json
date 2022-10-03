@@ -1,0 +1,44 @@
+{
+    "name": "jhome-wu/laravel-error-collector",
+    "description": ":package_description",
+    "require": {
+        "php": "^7.0",
+        "illuminate/contracts": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "nunomaduro/larastan": "^1.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JhomeWu\\LaravelErrorCollector\\": "src",
+            "JhomeWu\\LaravelErrorCollector\\Database\\Factories\\": "database/factories"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JhomeWu\\LaravelErrorCollector\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist.php --allow-risky=yes",
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JhomeWu\\LaravelErrorCollector\\PackageServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
